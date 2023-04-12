@@ -1,1 +1,9 @@
-print('Hello world and everyone in it.')
+def myFunction():
+    print('UCA')
+
+myFunction()
+
+def functionSecond():
+    print('second function')
+
+functionSecond()
