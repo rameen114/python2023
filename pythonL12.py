@@ -6,5 +6,3 @@ while True:
 print(name)
 
 # break
-# continue
-# pass
