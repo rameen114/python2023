@@ -3,8 +3,9 @@ def f(city):
         print(city + " population is 1M")
     if city == "Khujand":
         print(city + " population is 700K")
+    if city == "":
+        print("You didn't write any city name.")
 
-myCity = input("Write your city name: ")
-
-f(myCity)
-
+f("Dushanbe")
+f("Khujand")
+f("")
