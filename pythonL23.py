@@ -4,22 +4,17 @@ root = Tk()
 root.geometry('400x500')
 
 datas = []
-# 'Ahmad',  0
-# 'Zia',    1
-# 'attah'   2
-
-# 'Ahmad','931300473','Opera Ballet'
 
 def add():
     global datas
-    datas.append([Name.get(), Number.get(), Address.get()])
+    datas.append([Name.get(), Number.get(), Address.get(1.0, "end-1c")])
     update_book()
 
 def view():
     Name.set(datas[int(select.curselection()[0])][0])
     Number.set(datas[int(select.curselection()[0])][1])
     Address.delete(1.0,"end")
-    Address.set(1.0, datas[int(select.curselection()[0])][2])
+    Address.insert(1.0, datas[int(select.curselection()[0])][2])
 
 def delete():
     del datas[int(select.curselection()[0])]
@@ -61,5 +56,9 @@ Button(root, text='Add', command=add).place(x=100, y=270)
 Button(root, text='View', command=view).place(x=100, y=310)
 Button(root, text='Delete', command=delete).place(x=100, y=350)
 Button(root, text='Reset', command=reset).place(x=100, y=390)
+
+select = Listbox(root, height=12)
+select.place(x=200, y=260)
+select.pack()
 
 root.mainloop()
